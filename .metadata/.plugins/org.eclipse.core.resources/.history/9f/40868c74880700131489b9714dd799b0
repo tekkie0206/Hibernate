@@ -1,0 +1,5 @@
+package com.kali.dao;
+
+public class HibernateTest {
+
+}

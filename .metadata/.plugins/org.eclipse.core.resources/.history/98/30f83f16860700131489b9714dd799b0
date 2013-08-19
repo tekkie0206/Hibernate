@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN" 
+        "http://hibernate.sourceforge.net/hibernate-configuration-2.0.dtd"> 
+<hibernate-configuration> 
+    <!-- a SessionFactory instance listed as /jndi/name --> 
+    <!-- 
+hibernate.connection.datasource datasource JNDI name 
+hibernate.jndi.url URL of the JNDI provider (optional) 
+hibernate.jndi.class class of the JNDI InitialContextFactory (optional) 
+hibernate.jndi.xxxx pass the property xxxx to the JNDI InitialContextFactory (optional) 
+hibernate.connection.username database user (optional) 
+hibernate.connection.password database user password (optional) 
+    name="java:comp/env/hibernate/SessionFactory" 
+    --> 
+    <session-factory > 
+         
+        <property name="connection.driver_class">org.postgresql.Driver</property> 
+        <property name="connection.url">jdbc:postgresql://localhost:5432/hibernatedb</property> 
+        <property name="connection.username">admin</property> 
+        <property name="connection.password">admin</property> 
+        <property name="connection.pool_size">1</property>
+        
+        <property name="show_sql">true</property> 
+         
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property> 
+      
+      	<property name="hbm2ddl.auto">create</property>
+      	
+      	<mapping class="org.hibernate.tutorial.annotations.event"/>
+        
+    </session-factory> 
+</hibernate-configuration> 

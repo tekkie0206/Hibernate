@@ -1,0 +1,8 @@
+package com.kali.dto;
+
+public class UserDetails {
+	
+	private int userId;
+	private String userName;
+
+}
